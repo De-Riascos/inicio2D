@@ -10,6 +10,7 @@ public class Movimiento : MonoBehaviour
     public float velocidad = 5f;
     private float horizontal;
     private bool mirandoDerecha = true;
+    public bool attack = false;
 
     [Header("Salto")]
     public float speedSalto = 8f;
@@ -17,6 +18,9 @@ public class Movimiento : MonoBehaviour
     public LayerMask layerPiso;
     public int maxJumps = 2;
     private int jumpCount = 0;
+
+    [Header("Animacion")]
+    public Animator anim;
 
     // Update is called once per frame
     void Update()
@@ -26,6 +30,18 @@ public class Movimiento : MonoBehaviour
         if (isGrounded())
     {
         jumpCount = 0;
+    }
+    if (attack == false)
+    {
+        horizontal = Input.GetAxisRaw("Horizontal");
+        if (horizontal > 0 || horizontal < 0)
+        {
+            anim.SetFloat("Caminar", Mathf.Abs(horizontal));
+        }
+        else
+        {
+            anim.SetFloat("Caminar",0);
+        }
     }
 
     if (Input.GetButtonDown("Jump") && jumpCount < maxJumps)
