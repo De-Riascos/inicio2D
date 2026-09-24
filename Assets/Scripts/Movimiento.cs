@@ -26,26 +26,29 @@ public class Movimiento : MonoBehaviour
     void Update()
     {
         horizontal = Input.GetAxisRaw("Horizontal");
+        bool enSuelo = isGrounded();
+        anim.SetBool("ensuelo", enSuelo);
 
-        if (isGrounded())
+    if (enSuelo)
     {
         jumpCount = 0;
     }
+    
     if (attack == false)
     {
-        horizontal = Input.GetAxisRaw("Horizontal");
-        if (horizontal > 0 || horizontal < 0)
+        if (horizontal != 0)
         {
             anim.SetFloat("Caminar", Mathf.Abs(horizontal));
         }
         else
         {
-            anim.SetFloat("Caminar",0);
+            anim.SetFloat("Caminar",0f);
         }
     }
 
     if (Input.GetButtonDown("Jump") && jumpCount < maxJumps)
     {
+        anim.SetBool("ensuelo", false);
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, speedSalto);
         jumpCount++;
     }
@@ -54,7 +57,6 @@ public class Movimiento : MonoBehaviour
     {
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * 0.5f);
     }
-
         voltear();
     }
 
