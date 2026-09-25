@@ -8,7 +8,7 @@ public class Movimiento : MonoBehaviour
 
     [Header("Movimiento")]
     public float velocidad = 5f;
-    private float horizontal;
+    public float horizontal;
     private bool mirandoDerecha = true;
     public bool attack = false;
 
@@ -25,39 +25,40 @@ public class Movimiento : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        horizontal = Input.GetAxisRaw("Horizontal");
-        bool enSuelo = isGrounded();
-        anim.SetBool("ensuelo", enSuelo);
-
-    if (enSuelo)
-    {
-        jumpCount = 0;
-    }
-    
-    if (attack == false)
-    {
-        if (horizontal != 0)
+        if (attack == false)
         {
-            anim.SetFloat("Caminar", Mathf.Abs(horizontal));
-        }
-        else
-        {
-            anim.SetFloat("Caminar",0f);
-        }
-    }
+            
+            horizontal = Input.GetAxisRaw("Horizontal");
+            bool enSuelo = isGrounded();
+            anim.SetBool("ensuelo", enSuelo);
 
-    if (Input.GetButtonDown("Jump") && jumpCount < maxJumps)
-    {
-        anim.SetBool("ensuelo", false);
-        rb.linearVelocity = new Vector2(rb.linearVelocity.x, speedSalto);
-        jumpCount++;
-    }
+            if (enSuelo)
+            {
+                jumpCount = 0;
+            }
 
-    if (Input.GetButtonUp("Jump") && rb.linearVelocity.y > 0)
-    {
-        rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * 0.5f);
-    }
-        voltear();
+            if (horizontal != 0)
+            {
+                anim.SetFloat("Caminar", Mathf.Abs(horizontal));
+            }
+            else
+            {
+                anim.SetFloat("Caminar",0f);
+            }
+
+            if (Input.GetButtonDown("Jump") && jumpCount < maxJumps)
+            {
+                rb.linearVelocity = new Vector2(rb.linearVelocity.x, speedSalto);
+                anim.SetBool("ensuelo", false);
+                jumpCount++;
+            }
+
+            if (Input.GetButtonUp("Jump") && rb.linearVelocity.y > 0)
+            {
+                rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * 0.5f);
+            }
+                voltear();
+        }
     }
 
     private void FixedUpdate()
