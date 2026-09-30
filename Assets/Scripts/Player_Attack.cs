@@ -39,6 +39,8 @@ public class Player_Attack : MonoBehaviour
         {
             atacando = false;
         }
+
+        mov.attack = atacando;
     }
 
     public void Atacar()
