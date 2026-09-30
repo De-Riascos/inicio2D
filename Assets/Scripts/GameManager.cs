@@ -10,6 +10,10 @@ public class GameManager : MonoBehaviour
 
     public int cantMonedas = 0;
 
+    public bool atacando = false;
+
+    public Text txtmoneda, txtPersonaje;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,10 +25,14 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
         }
+        txtmoneda.text = cantMonedas.ToString();
+        txtPersonaje.text = "";
     }
 
     public void SetMonedas()
     {
         cantMonedas++;
+        txtmoneda.text = cantMonedas.ToString();
+        txtPersonaje.text = "He cogido " + cantMonedas + " monedas.";
     }
 }
