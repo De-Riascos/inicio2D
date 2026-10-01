@@ -1,16 +1,10 @@
 fileFormatVersion: 2
-guid: c39fccd8f01b94546bb6291c137ce8b7
+guid: e9eef9c670ab37d40b77d2a97ef0567c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6861590596038956700
-    second: ChatGPT Image 30 sept 2026, 04_44_55 p.m_0
-  - first:
-      213: 8889668042333112933
-    second: ChatGPT Image 30 sept 2026, 04_44_55 p.m_1
-  - first:
-      213: 3129100217335168727
-    second: ChatGPT Image 30 sept 2026, 04_44_55 p.m_2
+      213: -678884986366314002
+    second: Figure_walking_through_forest_2K_20261001120857.jpg_2K_20261001123231_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -104,17 +98,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ChatGPT Image 30 sept 2026, 04_44_55 p.m_0
+      name: Figure_walking_through_forest_2K_20261001120857.jpg_2K_20261001123231_0
       rect:
         serializedVersion: 2
-        x: 34
+        x: 0
         y: 0
-        width: 1709
-        height: 819
+        width: 2752
+        height: 1536
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -123,52 +130,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c961017fa44493f50800000000000000
-      internalID: 6861590596038956700
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ChatGPT Image 30 sept 2026, 04_44_55 p.m_1
-      rect:
-        serializedVersion: 2
-        x: 407
-        y: 819
-        width: 167
-        height: 68
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 56a486a2cf17e5b70800000000000000
-      internalID: 8889668042333112933
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ChatGPT Image 30 sept 2026, 04_44_55 p.m_2
-      rect:
-        serializedVersion: 2
-        x: 894
-        y: 844
-        width: 179
-        height: 36
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7de3cd8a11ccc6b20800000000000000
-      internalID: 3129100217335168727
+      spriteID: ee93a48a3bd1496f0800000000000000
+      internalID: -678884986366314002
       vertices: []
       indices: 
       edges: []
@@ -187,9 +150,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      ChatGPT Image 30 sept 2026, 04_44_55 p.m_0: 6861590596038956700
-      ChatGPT Image 30 sept 2026, 04_44_55 p.m_1: 8889668042333112933
-      ChatGPT Image 30 sept 2026, 04_44_55 p.m_2: 3129100217335168727
+      Figure_walking_through_forest_2K_20261001120857.jpg_2K_20261001123231_0: -678884986366314002
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

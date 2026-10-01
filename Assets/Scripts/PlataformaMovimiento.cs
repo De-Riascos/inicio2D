@@ -16,10 +16,10 @@ public class PlataformaMovimiento : MonoBehaviour
         moverHacia = puntosMovimiento[indiceActual].position;   
     }
 
-    // Update is called once per frame
-    void Update()
+    // FixedUpdate is called once per frame at a fixed interval
+    void FixedUpdate()
     {
-        this.transform.position = Vector3.MoveTowards(this.transform.position, moverHacia, velocidad * Time.deltaTime);
+        this.transform.position = Vector3.MoveTowards(this.transform.position, moverHacia, velocidad * Time.fixedDeltaTime);
 
         if (Vector3.Distance(this.transform.position, moverHacia) < 0.02f)
         {

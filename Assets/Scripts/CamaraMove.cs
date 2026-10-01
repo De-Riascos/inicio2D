@@ -7,9 +7,9 @@ public class CamaraMove : MonoBehaviour
     [SerializeField] private Vector3 offset = new Vector3(0f, 3.20f, -10f);
     private float smoothTime = 0.25f;
     private Vector3 velocity = Vector3.zero;
-    // Update is called once per frame
+    // LateUpdate is called once per frame after all Update calls
     [SerializeField] private Transform target; 
-    void Update()
+    void LateUpdate()
     {
         
         Vector3 targetPos = target.position + offset;
