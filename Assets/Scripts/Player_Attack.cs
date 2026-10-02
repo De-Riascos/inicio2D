@@ -12,7 +12,6 @@ public class Player_Attack : MonoBehaviour
 
     private Animator anim;
     private Movimiento mov;
-    private bool atacando;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -24,23 +23,16 @@ public class Player_Attack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1") && atacando == false)
+        if (tiemSigAtaque > 0f)
+        {
+            tiemSigAtaque = Mathf.Max(0f, tiemSigAtaque - Time.deltaTime);
+        }
+
+        if (Input.GetButtonDown("Fire1") && tiemSigAtaque <= 0f)
         {
             anim.SetTrigger("Attack");
             tiemSigAtaque = tiemEntreAtaque;
         }
-        
-        if (tiemSigAtaque > 0)
-        {
-            tiemSigAtaque -= Time.deltaTime;
-            atacando = true;
-        }
-        else
-        {
-            atacando = false;
-        }
-
-        mov.attack = atacando;
     }
 
     public void Atacar()
